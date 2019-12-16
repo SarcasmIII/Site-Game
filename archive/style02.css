@@ -1,0 +1,296 @@
+body {
+	font-family: "Roboto", sans-serif;
+	color: #aaa;
+    background-color: #122a2f;
+}
+
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+}
+
+.main {
+  height: 100%;
+  width: 100%;
+  background-color: #122a2f;
+  filter: blur(0) grayscale(0);
+  transition: filter 2s ease;
+}
+.main.back{
+  filter: blur(2px) grayscale(1);
+  user-select: none;
+  pointer-events:none;
+}
+
+.header {
+  background-color: #11343a;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 80px;
+  text-transform: uppercase;
+}
+
+.logo-header {
+  height: 100%;
+  display: flex;
+  width: 80px;
+  padding: 10px 0;
+}
+
+.logo-header img{
+  height: 100%;
+  width: 100%;
+  align-self: center;
+}
+
+a {
+  text-decoration: none;
+  color: #ccc;
+}
+
+.menu-header a{
+  display: inline-block;
+  transform: scale(1);
+  transition: transform 0.5s ease, color 0.5s ease;
+}
+
+.menu-header a:hover {
+  transform: scale(1.5);
+  color: purple;
+}
+
+.menu-header ul{
+  display: flex;
+  font-size: 24px;
+  justify-content: space-between;
+}
+
+.menu-header ul li {
+  margin-left: 40px;
+  list-style-type: none;
+}
+
+.search-header input{
+  background-color: #bbb;
+}
+
+.choose-container {
+  padding: 50px;
+}
+
+.edit-container {
+  background-color: #122a2f;
+  display: flex;
+  justify-content: center;
+}
+
+.section {
+  padding: 60px 0;
+}
+
+.main .edit-container .container {
+ width: 100%;
+}
+
+.person {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 50px 0;
+}
+
+.edit {
+  position: relative;
+  padding: 40px 80px;
+  height: 20px;
+  width: 20%;
+  text-align: center;
+  font-size: 20px;
+  background-color: #11343a;
+  border-right: 10px solid #293a34;
+  text-transform: uppercase;
+}
+
+.addperson {
+}
+
+.removeperson {
+}
+
+.editperson {
+}
+
+.post {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 50px 0;
+}
+
+.addpost {
+}
+
+.removepost {
+}
+
+.editpost {
+}
+
+.edit a {
+  user-select: none;
+  display: inline-block;
+  transform: scale(1);
+  transition: transform 0.5s ease, color 0.5s ease, text-shadow 0.5s ease;
+  text-shadow: none;
+}
+
+.edit a:hover {
+  cursor: pointer;
+  text-shadow: 3px 3px #062c21;
+  transform: scale(1.7);
+  color: aqua;
+}
+
+
+/*///////////////////////////////////////////////////*/
+
+/** {box-sizing: border-box;}*/
+
+.addperson1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: 'Roboto', sans-serif;
+  color: #aaa;
+  width: 100%;
+}
+
+.hidden{
+  display: none;
+}
+
+.ui-form {
+  max-width: 1100px;
+  padding: 80px 30px 30px;
+  margin: 50px auto 30px;
+  background-color: #11343a;
+  color: #aaa;
+}
+.ui-form h3 {
+  position: relative;
+  z-index: 5;
+  margin: 0 0 60px;
+  text-align: center;
+  color: #aaa;
+  font-size: 30px;
+  font-weight: normal;
+}
+
+.form-row {
+  position: relative;
+  margin-bottom: 40px;
+}
+.form-row input {
+  display: block;
+  width: 100%;
+  padding: 0 10px;
+  line-height: 40px;
+  font-family: 'Roboto', sans-serif;
+  background: none;
+  border-width: 0;
+  border-bottom: 2px solid #aaa;
+  transition: all 0.2s ease;
+}
+.form-row label {
+  position: absolute;
+  left: 13px;
+  color: #aaa;
+  font-size: 20px;
+  font-weight: 300;
+  transform: translateY(-35px);
+  transition: all 0.2s ease;
+}
+.form-row input:focus {
+  outline: 0;
+  border-color: #11343a;
+  color: #aaa;
+}
+.form-row input:focus + label,
+.form-row input:valid + label {
+  transform: translateY(-60px);
+  margin-left: -14px;
+  font-size: 14px;
+  font-weight: 400;
+  outline: 0;
+  border-color: #11343a;
+  color: #aaa;
+}
+.ui-form input[type="submit"] {
+  width: 100%;
+  padding: 0;
+  line-height: 42px;
+  background: #aaa;
+  border-width: 0;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+.ui-form p {
+  margin: 0;
+  padding-top: 10px;
+}
+
+.add-image-hero {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.image-hero {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.image-hero:hover {
+  cursor: pointer;
+  background-color: #122a2f;
+}
+
+.add-image-skill {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 10px;
+  width: 100%;
+}
+
+.all-skills {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+}
+
+.add-skill1 {
+  margin-right: 50px;
+}
+
+.add-skill2 {
+  margin-right: 50px;
+}
+.add-skill3{
+  margin-right: 50px;
+}
+.add-skill4 {
+
+}
+
+.all-skills:hover {
+  cursor: pointer;
+  background-color: #122a2f;
+}
+

@@ -1,0 +1,234 @@
+:root {
+    --main-bg-color: #bbe2e8; /*#11343a*/
+    --spare-bg-color: #57c8d1;  /*#122a2f*/
+    --text-color: #000; /*#aaa*/
+    --text-color-hover: #5e58d1;
+    --button-color-hover: #8bd6d5;
+}
+
+html,body{
+    height:100%;
+    background-color: var(--main-bg-color);
+}
+
+.block{
+    position: fixed;
+    width:300px;
+    height:100%;
+    background:var(--spare-bg-color);
+    transition: width 1s ease;
+}
+.scroll-right {
+    padding: 0;
+    width: 60px;
+}
+.content{
+    position: absolute;
+    height:100%;
+    width:100%;
+    overflow: hidden;
+    overflow-Y:auto;
+}
+
+.button-hidden, .button-visible{
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    margin-top: 20px;
+    margin-left: 20px;
+    transform: scale(1);
+    background-color: var(--main-bg-color);
+    transition: transform 1s ease, background-color 1s ease;
+    color: var(--text-color);
+    width: 30px;
+    height: 30px;
+    font-size: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.switch {
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid black;
+    margin-top: 20px;
+    margin-left: 60px;
+    transform: scale(1);
+    background-color: var(--main-bg-color);
+    transition: transform 1s ease, background-color 1s ease;
+    color: var(--text-color);
+    width: 100px;
+    height: 30px;
+    font-size: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.button-visible:hover{
+    transform: scale(1.2);
+    background-color: var(--button-color-hover);
+}
+
+.button-hidden:hover{
+    transform: scale(1.2);
+    background-color: var(--button-color-hover);
+}
+
+.switch:hover {
+    transform: translateY(-10px);
+    background-color: var(--button-color-hover);
+}
+
+.choose {
+    margin-top: 30%;
+    list-style-type: none;
+    line-height: 3;
+}
+
+.choose a{
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+#game, #post, #heroes {
+    position: relative;
+    padding: 20px;
+    font-size: 30px;
+    text-decoration: none;
+    color: var(--text-color);
+    transform: scale(1);
+    transition: transform 1s ease, color 0.5s ease;
+}
+
+#game:hover, #post:hover, #heroes:hover {
+    transform: scale(3);
+    color: var(--text-color-hover);
+}
+
+.game-m, .post-m, .heroes-m {
+    list-style-type: none;
+    font-size: 16px;
+}
+
+.pod-href {
+    transition: color 0.5s ease;
+}
+
+.pod-href:hover {
+    color: var(--text-color-hover);
+}
+/*//////////////////////////////dashboard/////////////////////////*/
+.dashboard {
+    margin-left: 300px;
+    height: 100%;
+    width: calc(100% - 300px);
+    display: flex;
+    justify-content: space-around;
+    align-content: space-around;
+    flex-wrap: wrap;
+    flex-grow: 0;
+}
+
+.row {
+    display: flex;
+    justify-content: space-around;
+    align-content: space-around;
+    width: 100%;
+}
+
+.squad {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 50px;
+    width: 300px;
+    height: 300px;
+    background-color: var(--spare-bg-color);
+    border: 1px solid black;
+}
+
+.squad a{
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.squad a:hover {
+    color: var(--text-color-hover);
+}
+
+/*////////////////////////////////////////add-hero and listhero/////////////////////////////*/
+.os {
+    margin-left: 300px;
+    height: 100%;
+    width: calc(100% - 300px);
+    text-align: center;
+    box-sizing: border-box;
+    padding: 50px;
+}
+
+h1 {
+    margin-bottom: 50px;
+    margin-top: 0;
+    color: var(--text-color);
+}
+.post-list {
+    border-top: 2px solid black;
+}
+table {
+    width: 100%;
+}
+
+.string {
+    width: 100%;
+}
+
+tr:first-child td{
+    border-bottom: 2px solid black;
+
+}
+
+.rowws {
+    border-left: 2px solid black;
+    padding-bottom: 20px;
+    color: var(--text-color);
+}
+
+.hero-edit {
+    text-decoration: none;
+    color: var(--text-color);
+    transition: color 0.5s ease;
+}
+
+.hero-edit:hover {
+    color: var(--text-color-hover);
+}
+
+.delete-hero {
+    margin-top: 10px;
+    border-radius: 10%;
+    border: 1px solid black;
+    transform: scale(1);
+    background-color: var(--main-bg-color);
+    transition: transform 1s ease, background-color 1s ease;
+    color: var(--text-color);
+    padding: 10px 10px;
+    font-size: 12px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.delete-hero:hover {
+    transform: scale(1.2);
+    background-color: var(--button-color-hover);
+}

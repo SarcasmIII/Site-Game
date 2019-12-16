@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style02.css">
+    <link rel="stylesheet" href="css/normalize.css">
+      <script src="js/jquery-3.4.1.min.js"></script>
+      <script src="js/mainadmin.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap&subset=cyrillic" rel="stylesheet">
+    <title></title>
+  </head>
+  <body>
+    <div class="main">
+        <div class="header">
+            <div class="logo-header">
+                <img src="psd/logo.svg">
+            </div>
+            <div id="menu"class="menu-header">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                </ul>
+            </div>
+            <div class="search-header">
+                <input type="search">
+            </div>
+        </div>
+        <div class="choose-container">
+            <div class="edit-container section">
+                <div class="container">
+                    <div class="person">
+                        <div class="edit addperson"><a class="addpersonlink" href="#">Добавить персонажа</a></div>
+                        <div class="edit removeperson"><a href="#">Удалить персонажа</a></div>
+                        <div class="edit editperson"><a href="#">Изменить персонажа</a></div>
+                    </div>
+                    <div class="post">
+                        <div class="edit addpost"><a href="#">Добавить пост</a></div>
+                        <div class="edit removepost"><a href="#">Удалить пост</a></div>
+                        <div class="edit editpost"><a href="#">Изменить пост</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="addperson1 hidden">
+            <form action="" class="ui-form">
+                <h3>Создание героя</h3>
+                <div class="form-row">
+                    <input type="text" id="name-hero" required autocomplete="off"><label for="name-hero">Имя героя</label>
+                </div>
+                <div class="form-row">
+                    <input type="text" id="description-hero" required autocomplete="off"><label for="description-hero">Описание</label>
+                </div>
+                <div class="form-row">
+                    <h3>Добавление иконки персонажа</h3>
+                    <div class="add-image-hero">
+                        <div class="image-hero"><img src="psd/plus.svg"></div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <h3>Добавление скиллов</h3>
+                    <div class="add-image-skill">
+                        <div class="all-skills add-skill1"><img src="psd/plus.svg"></div>
+                        <div class="all-skills add-skill2"><img src="psd/plus.svg"></div>
+                        <div class="all-skills add-skill3"><img src="psd/plus.svg"></div>
+                        <div class="all-skills add-skill4"><img src="psd/plus.svg"></div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <input type="text" id="first-skill" required autocomplete="off"><label for="first-skill">Первый скилл</label>
+                </div>
+                <div class="form-row">
+                    <input type="text" id="second-skill" required autocomplete="off"><label for="second-skill">Второй скилл</label>
+                </div>
+                <div class="form-row">
+                    <input type="text" id="third-skill" required autocomplete="off"><label for="third-skill">Третий скилл</label>
+                </div>
+                <div class="form-row">
+                    <input type="text" id="fourth-skill" required autocomplete="off"><label for="fourth-skill">Четвертый скилл</label>
+                </div>
+                <p><input class="submit" type="submit" value="Сохранить"></p>
+            </form>
+    </div>
+  </body>
+</html>
