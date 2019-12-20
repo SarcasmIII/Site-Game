@@ -160,26 +160,4 @@ $(document).ready(function(){
 			console.log("a");
 		}
 	});
-	
-	var sektor = new Sektor('.Sektor', {
-		size: 120,
-		stroke: 20,
-		arc: true,
-		angle: 0,
-		sectorColor: 'red',
-		circleColor: 'white',
-		fillCircle: false
-	});
-	
-
-	/*console.log(sektor.options.angle);*/
-	var num = 0;
-	$(".Sektor").click(function(e){
-		if ( num != "390") {
-			sektor.animateTo(num, 300);
-			num = num + 30;
-			console.log(num);
-		}
-	});
-
 });

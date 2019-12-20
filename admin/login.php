@@ -1,6 +1,6 @@
 <?php // login.php
   $hn = 'localhost';
-  $db = 'gameguide';
+  $db = 'gameguide2';
   $un = 'root';
   $pw = '';
 ?>

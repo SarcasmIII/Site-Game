@@ -62,9 +62,10 @@ $result = $conn->query($query);
 if (!$result) die ("Database access failed: " . $conn->error);
 
 $rows = $result->num_rows;
-$result->data_seek(1);
+$result->data_seek(0);
 $row = $result->fetch_array(MYSQLI_NUM);
-
+/*echo "lalal";
+var_dump($row);*/
 echo <<<_END
 			<div class="example-container section" id="description">
 				<div class="container">
@@ -78,26 +79,25 @@ echo <<<_END
 				  </div>
 				  <div class="hero-description">
 				  <p class="description-head">$row[1] — это $row[4]</p>
-					<div class="all-skill">
+				<div class="all-skill">
+_END;
+$subquery = "SELECT * FROM skills WHERE hero_id='$row[0]'";
+$subresult = $conn->query($subquery);
+if (!$subresult) die ("Database access failed: " . $conn->error);
+
+$subrows = $subresult->num_rows;
+for ($j = 0; $j < $subrows; ++$j)
+{
+	$subresult->data_seek($j);
+	$subrow = $subresult->fetch_array(MYSQLI_ASSOC);
+	echo <<<_END
 					  <div class="skill skill1">
-						<img src="$row[6]">
-						<p>$row[5] - $row[7]</p>
+						<img src="$subrow[skill_image]">
+						<p>$subrow[skill_name] - $subrow[skill_description]</p>
 					  </div>
-
-					  <div class="skill skill2">
-						<img src="$row[9]">
-						<p>$row[8] - $row[10]</p>
-					  </div>
-
-					  <div class="skill skill3">
-						<img src="$row[12]">
-						<p>$row[11] - $row[13]</p>
-					  </div>
-
-					  <div class="skill skill4">
-						<img src="$row[15]">
-						<p>$row[14] - $row[16]</p>
-					  </div>
+_END;
+}
+echo <<<_END
 					</div>
 				  </div>
 				</div>
