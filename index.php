@@ -12,7 +12,6 @@ if ($conn->connect_error) die($conn->connect_error);
 		<link rel="stylesheet" href="css/normalize.css">
 		<link rel="stylesheet" href="css/style.css">
 		<script src="js/jquery-3.4.1.min.js"></script>
-		<script src="js/jquery.snow.js"></script>
 		<script src="js/draggabilly.pkgd.min.js"></script>
 		<script src="js/main.js"></script>
 		<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap&subset=cyrillic" rel="stylesheet">
@@ -86,12 +85,12 @@ $subresult = $conn->query($subquery);
 if (!$subresult) die ("Database access failed: " . $conn->error);
 
 $subrows = $subresult->num_rows;
-for ($j = 0; $j < $subrows; ++$j)
+for ($j = 1; $j <= $subrows; ++$j)
 {
-	$subresult->data_seek($j);
+	$subresult->data_seek($j-1);
 	$subrow = $subresult->fetch_array(MYSQLI_ASSOC);
 	echo <<<_END
-					  <div class="skill skill1">
+					  <div class="skill skill$j">
 						<img src="$subrow[skill_image]">
 						<p>$subrow[skill_name] - $subrow[skill_description]</p>
 					  </div>

@@ -3,10 +3,6 @@ $(document).ready(function(){
   console.log('Структура страницы сформирована, можно приступать!');
   var loginval;
   var passwordval;
-	$.fn.snow({ minSize: 15, maxSize: 50, newOn: 500, flakeColor: '#0099FF' });
-	$(document).ready( function(){
-		$.fn.snow();
-	});
   $('.scroll-description').click(function(e){
        $('html, body').animate({scrollTop:$('#description').position().top}, 2000);
 	});
@@ -34,7 +30,7 @@ $(document).ready(function(){
         if(passwordval == "qwerty") {
           $(".password-confirm").removeClass("wrong");
           console.log("Confirm");
-          window.location.href = "http://youtube.com";
+          window.location.href = "admin/index.php";
         }
         else {
           console.log("password wrong");
@@ -59,7 +55,7 @@ $(document).ready(function(){
 				if(passwordval == "qwerty") {
 					$(".password-confirm").removeClass("wrong");
 					console.log("Confirm");
-					window.location.href = "file:///D:/!_project/portfolio01/index02.html";
+					window.location.href = "admin/index.php";
 				}
 				else {
 					console.log("password wrong");

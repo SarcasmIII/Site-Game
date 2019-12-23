@@ -2,10 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0e801231-4caa-41f0-a17e-26303918fa8a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/addpost.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/heroedit.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/listpost.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/addhero.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/addhero.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/style-admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/admin/css/style-admin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/header-admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/header-admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/listhero.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/listhero.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/jquery.snow.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -54,6 +61,8 @@
       <workItem from="1576413751965" duration="1022000" />
       <workItem from="1576488570514" duration="10950000" />
       <workItem from="1576843904051" duration="2098000" />
+      <workItem from="1577026401139" duration="12000" />
+      <workItem from="1577026415054" duration="6217000" />
     </task>
     <servers />
   </component>
@@ -65,7 +74,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

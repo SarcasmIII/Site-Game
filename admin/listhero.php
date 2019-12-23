@@ -6,27 +6,27 @@ require_once 'header-admin.php';
 $conn = new mysqli($hn, $un, $pw, $db);
 if ($conn->connect_error) die($conn->connect_error);
 
-if (isset($_POST['delete']) && isset($_POST['id']))
+if (isset($_POST['delete']) && isset($_POST['hero_id']))
 {
-    $id   = get_post($conn, 'id');
-    $query  = "DELETE FROM heroes WHERE id='$id'";
+    $id   = get_post($conn, 'hero_id');
+    $query  = "DELETE FROM heroes WHERE hero_id='$id'";
     $result = $conn->query($query);
     if (!$result) echo "DELETE failed: $query<br>" .
         $conn->error . "<br><br>";
 }
 
-if (isset($_POST['id'])          &&
-    isset($_POST['name'])        &&
-    isset($_POST['game'])        &&
-    isset($_POST['image_hero'])  &&
-    isset($_POST['description']))
+if (isset($_POST['hero_id'])          &&
+    isset($_POST['hero_name'])        &&
+    isset($_POST['game_name'])        &&
+    isset($_POST['hero_image'])  &&
+    isset($_POST['hero_description']))
 {
-    $id   = get_post($conn, 'id');
-    $name    = get_post($conn, 'name');
-    $game = get_post($conn, 'game');
-    $image_hero     = get_post($conn, 'image_hero');
-    $description     = get_post($conn, 'description');
-    $query    = "INSERT INTO heroes(id, name, game, image_hero, description) VALUES" .
+    $id   = get_post($conn, 'hero_id');
+    $name    = get_post($conn, 'hero_name');
+    $game = get_post($conn, 'game_name');
+    $image_hero     = get_post($conn, 'hero_image');
+    $description     = get_post($conn, 'hero_description');
+    $query    = "INSERT INTO heroes(hero_id, hero_name, game_name, hero_image, hero_description) VALUES" .
         "('$id', '$name', '$game', '$image_hero', '$description')";
     $result   = $conn->query($query);
 
@@ -37,12 +37,12 @@ if (isset($_POST['id'])          &&
 
 <div class="os">
     <div class="header"><h1>Heroes</h1></div>
-    <div class="post-list">
+    <div class="hero-list">
     <table>
         <tr>
-            <td class="rowws id">id</td>
-            <td class="rowws name">name</td>
-            <td class="rowws game">game</td>
+            <td class="rowws">id</td>
+            <td class="rowws">name</td>
+            <td class="rowws">game</td>
             <td class="rowws">Кнопка удаления</td>
         </tr>     
 _END;
@@ -60,12 +60,12 @@ for ($j = 0 ; $j < $rows ; ++$j)
 
     echo <<<_END
         <tr class="string">
-            <td class="rowws id">$row[0]</td>
-            <td class="rowws name"><a href="#" class="hero-edit">$row[1]</a></td>
-            <td class="rowws game">$row[2]</td>
+            <td class="rowws">$row[0]</td>
+            <td class="rowws"><a href="#" class="hero-edit">$row[1]</a></td>
+            <td class="rowws">$row[2]</td>
             <td class="rowws"><form action="listhero.php" method="post">
               <input type="hidden" name="delete" value="yes">
-              <input type="hidden" name="id" value="$row[0]">
+              <input type="hidden" name="hero_id" value="$row[0]">
               <input type="submit" value="DELETE HERO" class="delete-hero"></form></td>
         </tr>     
 _END;

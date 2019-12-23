@@ -33,8 +33,8 @@
             </li>
             <li><a href="#" id="post">Посты</a>
                 <ul class="post-m hidden">
-                    <li><a href="#" class="pod-href ">Посмотреть все</a></li>
-                    <li><a href="#" class="pod-href ">Создать пост</a></li>
+                    <li><a href="listpost.php" class="pod-href ">Посмотреть все</a></li>
+                    <li><a href="addpost.php" class="pod-href ">Создать пост</a></li>
                 </ul>
             </li>
             <li><a href="#" id="heroes">Персонажи</a>
