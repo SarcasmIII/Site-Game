@@ -56,16 +56,16 @@ $rows = $result->num_rows;
 for ($j = 0 ; $j < $rows ; ++$j)
 {
     $result->data_seek($j);
-    $row = $result->fetch_array(MYSQLI_NUM);
+    $row = $result->fetch_array(MYSQLI_ASSOC);
 
     echo <<<_END
         <tr class="string">
-            <td class="rowws">$row[0]</td>
-            <td class="rowws"><a href="#" class="hero-edit">$row[1]</a></td>
-            <td class="rowws">$row[2]</td>
+            <td class="rowws">$row[hero_id]</td>
+            <td class="rowws"><a href="heroedit.php?hero_id=$row[hero_id]&hero_name=$row[hero_name]" class="hero-edit">$row[hero_name]</a></td>
+            <td class="rowws">$row[game_name]</td>
             <td class="rowws"><form action="listhero.php" method="post">
               <input type="hidden" name="delete" value="yes">
-              <input type="hidden" name="hero_id" value="$row[0]">
+              <input type="hidden" name="hero_id" value="$row[hero_id]">
               <input type="submit" value="DELETE HERO" class="delete-hero"></form></td>
         </tr>     
 _END;

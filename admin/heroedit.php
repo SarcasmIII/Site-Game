@@ -23,13 +23,14 @@ echo <<<_END
 	  <body>
         <div class="os">
 _END;
-$query  = "SELECT * FROM heroes";
+if (isset($_GET['hero_id'])){
+   $id  = sanitizeString($_GET['hero_id']);
+}
+$query  = "SELECT * FROM heroes WHERE hero_id = '$id'";
 $result = $conn->query($query);
+/*var_dump($result);*/
 if (!$result) die ("Database access failed: " . $conn->error);
-
-$rows = $result->num_rows;
-$result->data_seek(0);
-$row = $result->fetch_array(MYSQLI_NUM);
+$row = $result->fetch_array(MYSQLI_ASSOC);
 /*echo "lalal";
 var_dump($row);*/
 echo <<<_END
@@ -41,13 +42,13 @@ echo <<<_END
 						</div>
 						<div class="wrap-control-line draggable"><div class="control-line"></div></div>
 					</div>
-					<img src="../$row[3]">
+					<img src="../$row[hero_image]">
 				  </div>
 				  <div class="hero-description">
-				  <p class="description-head">$row[1] — это $row[4]</p>
+				  <p class="description-head">$row[hero_name] — это $row[hero_description]</p>
 				<div class="all-skill">
 _END;
-$subquery = "SELECT * FROM skills WHERE hero_id='$row[0]'";
+$subquery = "SELECT * FROM skills WHERE hero_id='$row[hero_id]'";
 $subresult = $conn->query($subquery);
 if (!$subresult) die ("Database access failed: " . $conn->error);
 
