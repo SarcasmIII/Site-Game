@@ -26,9 +26,9 @@ if ($conn->connect_error) die($conn->connect_error);
 			  <div id="menu" class="menu-header">
 				<ul>
 				  <li><a href="#">Главная</a></li>
-				  <li><a href="#">Игры</a></li>
+				  <li><a href="#game">Игры</a></li>
 				  <li><a class="scroll-description" href="#description">Пример</a></li>
-				  <li><a href="#">О нас</a></li>
+				  <li><a href="#us">О нас</a></li>
 				</ul>
 			  </div>
 			  <div class="search-header">
@@ -39,23 +39,25 @@ if ($conn->connect_error) die($conn->connect_error);
 
 		  </div>
 			</div>
-			<div class="game-container section">
+			<div class="game-container section" id="game">
 				<div class="container">
-				  <div class="game ml">
-					<div class="game-logo"><img src="image/logo-ml.png"></div>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Aenean semper felis eu dictum tristique. In vel diam magna. Suspendisse aliquet nibh et nunc finibus maximus. Suspendisse potenti. Suspendisse lacinia tristique leo id molestie. Mauris lacinia sem sem, non gravida metus ultrices vel. Sed dui mauris, molestie scelerisque laoreet id, laoreet vitae sapien.</p>
-				  </div>
-				  <div class="game dota">
-					<div class="game-logo"><a href="index02.html"><img src="image/logo-ml.png"></a></div>
-					<p>Lorem ipsum Aenean semper felis eu dictum tristique. In vel diam magna. Suspendisse aliquet nibh et nunc finibus maximus. Lorem ipsum Aenean semper felis eu dictum tristique. In vel diam magna. Suspendisse aliquet nibh et nunc finibus maximus. Lorem ipsum Aenean semper felis eu dictum tristique. In vel diam magna. Suspendisse aliquet nibh et nunc finibus maximus. Lorem ipsum Aenean semper felis eu dictum tristique. In vel diam magna. Suspendisse aliquet nibh et nunc finibus maximus. Lorem ipsum Aenean semper felis eu dictum tristique. In vel diam magna. Suspendisse aliquet nibh et nunc finibus maximus. Lorem ipsum Aenean semper felis eu dictum tristique. In vel diam magna. Suspendisse aliquet nibh et nunc finibus maximus.Suspendisse potenti. Suspendisse lacinia tristique leo id molestie. Mauris lacinia sem sem, non gravida metus ultrices vel. Sed dui mauris, molestie scelerisque laoreet id, laoreet vitae sapien.</p>
-				  </div>
-				  <div class="game lol">
-					<div class="game-logo"><img src="image/logo-ml.png"></div>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean semper felis eu dictum tristique. In vel diam magna. Suspendisse aliquet nibh et nunc finibus maximus. Suspendisse potenti. Suspendisse lacinia tristique leo id molestie. Mauris lacinia sem sem, non gravida metus ultrices vel. Sed dui mauris, molestie scelerisque laoreet id, laoreet vitae sapien.</p>
-				  </div>
-				</div>
-			</div>
 _END;
+$gamequery = "SELECT * FROM game";
+$gameresult = $conn->query($gamequery);
+if (!$gameresult) die ("Database access failed: " . $conn->error);
+
+$gamerows = $gameresult->num_rows;
+for ($j = 0; $j < $gamerows; ++$j)
+{
+$gameresult->data_seek($j);
+$gamerow = $gameresult->fetch_array(MYSQLI_ASSOC);
+echo <<<_END
+				  <div class="game ml">
+					<div class="game-logo"><a href="game-hero.php?game_id=$gamerow[game_id]"><img src="$gamerow[game_image]"></a></div>
+					<p> $gamerow[game_name] - $gamerow[game_description]</p>
+				  </div>
+_END;
+}
 $query  = "SELECT * FROM heroes";
 $result = $conn->query($query);
 if (!$result) die ("Database access failed: " . $conn->error);
@@ -66,6 +68,8 @@ $row = $result->fetch_array(MYSQLI_NUM);
 /*echo "lalal";
 var_dump($row);*/
 echo <<<_END
+</div>
+</div>
 			<div class="example-container section" id="description">
 				<div class="container">
 				  <div class="hero-example">
@@ -101,7 +105,7 @@ echo <<<_END
 				  </div>
 				</div>
 			</div>
-			<div class="container-our section">
+			<div class="container-our section" id="us">
 			<div class="container">
 			  <div class="photo photokr"><img src="image/our1.jpg"></div>
 			  <div class="text-our"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean semper felis eu dictum tristique. In vel diam magna. Suspendisse aliquet nibh et nunc finibus maximus. Suspendisse potenti. Suspendisse lacinia tristique leo id molestie. Mauris lacinia sem sem, non gravida metus ultrices vel. Sed dui mauris, molestie scelerisque laoreet id, laoreet vitae sapien.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean semper felis eu dictum tristique. In vel diam magna. Suspendisse aliquet nibh et nunc finibus maximus. Suspendisse potenti. Suspendisse lacinia tristique leo id molestie. Mauris lacinia sem sem, non gravida metus ultrices vel. Sed dui mauris, molestie scelerisque laoreet id, laoreet vitae sapien.</p></div>

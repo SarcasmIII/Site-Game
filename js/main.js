@@ -3,8 +3,8 @@ $(document).ready(function(){
   console.log('Структура страницы сформирована, можно приступать!');
   var loginval;
   var passwordval;
-  $('.scroll-description').click(function(e){
-       $('html, body').animate({scrollTop:$('#description').position().top}, 2000);
+	$('.scroll-description').click(function(e){
+		$('html, body').animate({scrollTop:$('#').position().top}, 2000);
 	});
 
   $(".loginButton").click(function(e){

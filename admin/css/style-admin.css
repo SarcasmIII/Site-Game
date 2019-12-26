@@ -240,3 +240,25 @@ tr:first-child td{
     transform: scale(1.2);
     background-color: var(--button-color-hover);
 }
+/*////////////////////////////////edit hero/////////////////////////////////////*/
+.edithero-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-wrap: wrap;
+}
+.block-hero {
+    flex-shrink: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: space-around;
+}
+.edithero-image {
+    align-self: flex-start;
+}
+.edithero-des{
+    align-self: flex-end;
+}

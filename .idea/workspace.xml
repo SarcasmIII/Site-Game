@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0e801231-4caa-41f0-a17e-26303918fa8a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/game-hero.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/header-admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/header-admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/style-admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/admin/css/style-admin.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/heroedit.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/heroedit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/listhero.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/listhero.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,6 +60,8 @@
       <workItem from="1577026401139" duration="12000" />
       <workItem from="1577026415054" duration="6217000" />
       <workItem from="1577095120390" duration="4992000" />
+      <workItem from="1577280251905" duration="5110000" />
+      <workItem from="1577392675545" duration="5622000" />
     </task>
     <servers />
   </component>
