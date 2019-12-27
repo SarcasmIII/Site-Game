@@ -8,8 +8,8 @@ function sanitizeString($var){
 require_once 'admin/login.php';
 $conn = new mysqli($hn, $un, $pw, $db);
 if ($conn->connect_error) die($conn->connect_error);
-if (isset($_GET['game_id'])){
-    $gg  = sanitizeString($_GET['game_id']);
+if (isset($_GET['game'])){
+    $gg  = sanitizeString($_GET['game']);
 }
 echo <<<_END
 <!DOCTYPE html>
@@ -47,8 +47,13 @@ echo <<<_END
     </div>
     <div class="header-choose-hero">
 _END;
-
-$query  = "SELECT * FROM heroes WHERE game_id='$gg'";
+$searchgame = "SELECT * FROM game WHERE game_slug='$gg'";
+$searchresult = $conn->query($searchgame);
+if (!$searchresult) die ("Database access failed: " . $conn->error);
+$searchresult->data_seek(0);
+$searchrow = $searchresult->fetch_array(MYSQLI_ASSOC);
+/*var_dump($searchrow);*/
+$query  = "SELECT * FROM heroes WHERE game_name='$searchrow[game_name]'";
 $result = $conn->query($query);
 if (!$result) die ("Database access failed: " . $conn->error);
 
@@ -66,7 +71,7 @@ _END;
 echo <<<_END
     </div> <!--header-choose-hero-->
 _END;
-$query  = "SELECT * FROM heroes WHERE game_id='$gg'";
+$query  = "SELECT * FROM heroes WHERE game_name='$searchrow[game_name]'";
 $result = $conn->query($query);
 if (!$result) die ("Database access failed: " . $conn->error);
 
@@ -105,10 +110,10 @@ _END;
 _END;
     }
     echo <<<_END
-</div> <!--skill-->
-</div> <!--description-->
-        </div><!--container-->
-    </div><!--example-->
+</div><!--skill-->
+</div><!--description-->
+</div><!--container-->
+</div><!--example-->
 _END;
 }
 echo <<<_END
@@ -116,6 +121,8 @@ echo <<<_END
 </body>
 </html>
 _END;
+$searchresult->close();
+$subresult->close();
 $result->close();
 $conn->close();
 

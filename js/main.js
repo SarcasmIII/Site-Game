@@ -4,7 +4,8 @@ $(document).ready(function(){
   var loginval;
   var passwordval;
 	$('.scroll-description').click(function(e){
-		$('html, body').animate({scrollTop:$('#').position().top}, 2000);
+		var idElem = $(this).attr("href");
+		$('html, body').animate({scrollTop:$(idElem).position().top}, 1500);
 	});
 
   $(".loginButton").click(function(e){

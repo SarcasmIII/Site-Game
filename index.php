@@ -53,7 +53,7 @@ $gameresult->data_seek($j);
 $gamerow = $gameresult->fetch_array(MYSQLI_ASSOC);
 echo <<<_END
 				  <div class="game ml">
-					<div class="game-logo"><a href="game-hero.php?game_id=$gamerow[game_id]"><img src="$gamerow[game_image]"></a></div>
+					<div class="game-logo"><a href="game-hero.php?game=$gamerow[game_slug]"><img src="$gamerow[game_image]"></a></div>
 					<p> $gamerow[game_name] - $gamerow[game_description]</p>
 				  </div>
 _END;
