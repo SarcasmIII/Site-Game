@@ -6,45 +6,16 @@ function sanitizeString($var){
     return $var;
 }
 require_once 'admin/login.php';
+require_once 'header.php';
 $conn = new mysqli($hn, $un, $pw, $db);
 if ($conn->connect_error) die($conn->connect_error);
 if (isset($_GET['game'])){
     $gg  = sanitizeString($_GET['game']);
 }
+else {
+    echo("ekee");
+}
 echo <<<_END
-<!DOCTYPE html>
-<html lang="ru" dir="ltr">
-<head>
-    <meta charset="utf-8">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/draggabilly.pkgd.min.js"></script>
-    <script src="js/main.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap&subset=cyrillic" rel="stylesheet">
-    <title></title>
-</head>
-<body>
-<div class="main">
-    <div class="header">
-        <div class="logo-header">
-            <img src="image/logo.svg">
-        </div>
-        <div id="menu" class="menu-header">
-            <ul>
-                <li><a href="index.php">Главная</a></li>
-            </ul>
-        </div>
-        <div class="search-header">
-            <input type="search">
-        </div>
-        <div class="loginButton">
-            <p>Login</p>
-
-        </div>
-    </div>
     <div class="header-choose-hero">
 _END;
 $searchgame = "SELECT * FROM game WHERE game_slug='$gg'";
@@ -115,6 +86,7 @@ _END;
 </div><!--container-->
 </div><!--example-->
 _END;
+    $subresult->close();
 }
 echo <<<_END
 </div> <!--main-->
@@ -122,7 +94,6 @@ echo <<<_END
 </html>
 _END;
 $searchresult->close();
-$subresult->close();
 $result->close();
 $conn->close();
 
