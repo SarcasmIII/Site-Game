@@ -8,6 +8,37 @@ $(document).ready(function(){
 		$('html, body').animate({scrollTop:$(idElem).position().top}, 1500);
 	});
 
+/*position elements for windows screen*/
+	//var eTop = $('#1').offset().top; //get the offset top of the element
+	var allElem = $('.example-container');
+	var heightWindow = $(window).height();
+
+	function findMinToCenter(){
+		var minToCenter = 1000;
+		var needElem;
+		allElem.each(function() {
+			var eTop = $(this).offset().top;
+			var heightElem = $(this).outerHeight();
+			var centerScreen = Math.abs(eTop - heightWindow/2 - $(window).scrollTop() + heightElem/2);
+			if (minToCenter > centerScreen) {
+				minToCenter = centerScreen;
+				needElem = $(this);
+			}
+
+		});
+		$(".all-skill").removeClass('in-center');
+		needElem.find(".all-skill").addClass('in-center');
+		/*console.log(needElem);
+		console.log(minToCenter);*/
+	}
+	findMinToCenter();
+	//console.log(eTop - $(window).scrollTop()); //position of the ele w.r.t window
+	//var heightElem = $('#1').outerHeight();
+	$(window).scroll(function() { //when window is scrolled
+		findMinToCenter();
+	});
+///
+
   $(".loginButton").click(function(e){
 	$("body").addClass( "stop-scrolling");
     $(".main").addClass( "back");
@@ -99,7 +130,7 @@ $(document).ready(function(){
 		 $(".main").removeClass("back");
 		 $(".loginBlock").addClass("hidden");
 	  }
-	  $(".skill" + a + " img").trigger('mouseenter');
+	  $(".in-center " + ".skill" + a + " img").trigger('mouseenter');
 	});
   
   $( "body" ).keyup(function(e) {
